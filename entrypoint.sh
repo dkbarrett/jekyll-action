@@ -65,6 +65,12 @@ else
 fi
 
 JEKYLL_ENV=production bundle exec ${BUNDLE_ARGS} jekyll build -s ${GITHUB_WORKSPACE}/${JEKYLL_SRC} -d build ${VERBOSE}
+
+# If we have a CNAME file, move it to build directory
+if [ -f ${GITHUB_WORKSPACE}/CNAME ]; then
+   mv ${GITHUB_WORKSPACE}/CNAME build
+fi
+
 echo "Jekyll build done"
 
 cd build
