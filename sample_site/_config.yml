@@ -2,14 +2,12 @@ title: Jekyll AsciiDoc Action
 description: A GitHub Action to publish AsciiDoc content as a GitHub Pages site
 author: Alain Helaili
 email: helaili@github.com
+timezone: 'Europe/Paris'
 exclude:
   - LICENSE.adoc
   - README.adoc
-  - Gemfile
-  - Gemfile.lock
-asciidoc: {}
 asciidoctor:
-  base_dir: :docdir
+  base_dir: :source
   safe: unsafe
   attributes:
     - idseparator=_
